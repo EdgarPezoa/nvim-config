@@ -1,0 +1,62 @@
+call plug#begin()
+    "Escential
+    Plug 'joshdick/onedark.vim'
+    Plug 'dense-analysis/ale'
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'mattn/emmet-vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'tpope/vim-surround'
+    Plug 'scrooloose/syntastic'
+    Plug 'vim-airline/vim-airline'
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'frazrepo/vim-rainbow'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+
+    "Javascript/Typescript
+    Plug 'pangloss/vim-javascript'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'jparise/vim-graphql'
+
+    "Coc intellisense :CocInstall coc-json coc-tsserver
+    Plug 'neoclide/coc-json'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
+
+    "JS TS
+    autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+    autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+    "Syntatic
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    
+    "GITGUTTER
+    let g:gitgutter_sign_added = '✚'
+    let g:gitgutter_sign_modified = '✹'
+    let g:gitgutter_sign_removed = '-'
+    let g:gitgutter_sign_removed_first_line = '-'
+    let g:gitgutter_sign_modified_removed = '-'
+    function! GitStatus()
+        let [a,m,r] = GitGutterGetHunkSummary()
+        return printf('+%d ~%d -%d', a, m, r)
+    endfunction
+     set statusline+=%{GitStatus()}  
+
+    "Multicursor
+    let g:multi_cursor_start_word_key      = '<C-n>'
+    let g:multi_cursor_select_all_word_key = '<A-n>'
