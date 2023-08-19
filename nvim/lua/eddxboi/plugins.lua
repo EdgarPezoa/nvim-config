@@ -44,7 +44,6 @@ packer.startup(function(use)
 
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-buffer' },
@@ -53,10 +52,6 @@ packer.startup(function(use)
             { 'rafamadriz/friendly-snippets' }
         }
     } -- (REQUIRED) LSP and Autocompletion
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }                                 -- (REQUIRED) autopair
     use 'windwp/nvim-ts-autotag'      -- (REQUIRED) Autotag
     use 'nvim-tree/nvim-web-devicons' -- (REQUIRED) nvim tree dev icons
     use 'akinsho/nvim-bufferline.lua' -- (OPTIONAL) nvim enable tabs
@@ -72,5 +67,10 @@ packer.startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     }) -- (REQUIRED) Markdown previewer
 
+    use 'windwp/nvim-autopairs' -- (REQUIRED) Autopair
+    use 'windwp/nvim-ts-autotag' -- (REQUIRED) Auto tag html
     use 'lewis6991/gitsigns.nvim' -- (REQUIRED) Adds git signs
+    use 'jose-elias-alvarez/null-ls.nvim' -- (REQUIRED) Enables formatting
+    use 'onsails/lspkind-nvim' -- (REQUIRED) vscode-like pictograms
+
 end)

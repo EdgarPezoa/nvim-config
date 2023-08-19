@@ -1,9 +1,4 @@
-require'nvim-treesitter.configs'.setup {
-  autotag = {
-    enable = true,
-    enable_rename = true,
-    enable_close = true,
-    enable_close_on_slash = true,
-    filetypes = { "html" , "xml" },
-  }
-}
+local status, autotag = pcall(require, "nvim-ts-autotag")
+if (not status) then return end
+
+autotag.setup({})
