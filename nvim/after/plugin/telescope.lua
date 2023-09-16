@@ -3,7 +3,7 @@ if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
-require("telescope").setup {
+telescope.setup {
     defaults = {
         file_ignore_patterns = {".git"}
     },
@@ -21,7 +21,8 @@ require("telescope").setup {
         layout_strategy = 'horizontal',
         layout_config = { height = 0.90, width = 0.75 },
         theme = "dropdown",
-        hijack_netrw = true,
+        hijack_netrw = false,
+        hidden = { file_browser = true, folder_browser = true },
         mappings = {
             ["i"] = {},
             ["n"] = {},
@@ -39,22 +40,25 @@ vim.keymap.set('n', '<leader>ff',
       hidden = true,
     })
 end)
-vim.keymap.set("n", "<leader>fj", function()
+
+vim.keymap.set("n", "<leader>fd", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
     initial_mode = "normal",
+    display_stat=false
   })
 end)
+
 vim.keymap.set("n", "<leader>fa", function()
   telescope.extensions.file_browser.file_browser({
     respect_gitignore = false,
     hidden = true,
     grouped = true,
     initial_mode = "normal",
+    display_stat=false
   })
 end)
 

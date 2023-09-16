@@ -9,13 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
     use "wbthomason/packer.nvim"
     use 'folke/tokyonight.nvim'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }                          -- (REQUIRED) Added color to languages
+    use 'nvim-treesitter/nvim-treesitter' -- (REQUIRED) Added color to languages
     use "nvim-treesitter/nvim-treesitter-context";
     use "ThePrimeagen/harpoon" -- (REQUIRED) marks files for easy navigation
     use "mbbill/undotree"      -- (REQUIRED) see undo tree
@@ -60,7 +54,6 @@ packer.startup(function(use)
             'JoosepAlviste/nvim-ts-context-commentstring'
         }
     }                                 -- (REQUIRED) fast comment pluging
-
     use 'norcalli/nvim-colorizer.lua' -- (REQUIRED) Color highlighter #000
     use({
         "iamcco/markdown-preview.nvim",
@@ -68,9 +61,9 @@ packer.startup(function(use)
     }) -- (REQUIRED) Markdown previewer
 
     use 'windwp/nvim-autopairs' -- (REQUIRED) Autopair
-    use 'windwp/nvim-ts-autotag' -- (REQUIRED) Auto tag html
     use 'lewis6991/gitsigns.nvim' -- (REQUIRED) Adds git signs
     use 'jose-elias-alvarez/null-ls.nvim' -- (REQUIRED) Enables formatting
     use 'onsails/lspkind-nvim' -- (REQUIRED) vscode-like pictograms
+    use 'mattn/emmet-vim' -- (REQUIRED) auto completion tag emmet
 
 end)

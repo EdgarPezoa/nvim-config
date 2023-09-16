@@ -1,6 +1,10 @@
 local keymap = vim.keymap
 vim.g.mapleader = " "
 
+-- Create line spaces
+keymap.set("n", "<leader>o", "o<esc>");
+keymap.set("n", "<leader>O", "O<esc>");
+
 -- Move code
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -39,6 +43,10 @@ keymap.set('n', 'sw', '<C-w>5+')
 keymap.set('n', 'sx', '<C-w>5-')
 keymap.set('n', 'se', '<C-w>=')
 
+-- Plugins
+vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>"); -- Opens Git diff view
+vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>"); -- Close Git diff view
+
 keymap.set('i', 'jk', '<Esc>')                              -- Exit insert mode with jk
 keymap.set('n', 'dp', 'dd')                                 -- Delete with save
 keymap.set('n', 'dw', 'vb"_d')                              -- Delete a word backwards
@@ -49,7 +57,3 @@ keymap.set("n", "<leader>yp", "{vy}")                       -- yank paragraph in
 keymap.set("n", "Q", "<nop>")                               -- Replace to nothing remake all recordings
 keymap.set("n", "<leader>s",
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace all hightlight key
-
--- Comment code
--- n - gcc
--- v - gc
