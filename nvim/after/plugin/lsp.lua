@@ -50,6 +50,26 @@ lsp.on_attach(function(_, bufnr)
   -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lsp.format_mapping('gq', {
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['null-ls'] = {'javascript', 'typescript', 'lua'},
+  }
+})
+
+lsp.format_on_save({
+  format_opts = {
+    async = true,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['null-ls'] = {'javascript', 'typescript', 'lua'},
+  }
+})
+
 lsp.setup()
 
 vim.diagnostic.config({
