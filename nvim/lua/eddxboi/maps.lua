@@ -45,7 +45,7 @@ keymap.set('n', 'se', '<C-w>=')
 
 -- Plugins
 vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>"); -- Opens Git diff view
-vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>"); -- Close Git diff view
+vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>"); -- Opens Git diff view
 
 keymap.set('i', 'jk', '<Esc>')                              -- Exit insert mode with jk
 keymap.set('n', 'dp', 'dd')                                 -- Delete with save

@@ -65,5 +65,6 @@ packer.startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim' -- (REQUIRED) Enables formatting
     use 'onsails/lspkind-nvim' -- (REQUIRED) vscode-like pictograms
     use 'mattn/emmet-vim' -- (REQUIRED) auto completion tag emmet
+    use "sindrets/diffview.nvim" -- (REQUIRED) git diff views
 
 end)
