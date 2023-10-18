@@ -44,10 +44,11 @@ keymap.set('n', 'sx', '<C-w>5-')
 keymap.set('n', 'se', '<C-w>=')
 
 -- Plugins
-vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>"); -- Opens Git diff view
-vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>"); -- Opens Git diff view
+vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>") -- Opens Git diff view
+vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- Opens Git diff view
 
 keymap.set('i', 'jk', '<Esc>')                              -- Exit insert mode with jk
+keymap.set('v', 'f', '<Esc>')                              -- Exit visual mode with jk
 keymap.set('n', 'dp', 'dd')                                 -- Delete with save
 keymap.set('n', 'dw', 'vb"_d')                              -- Delete a word backwards
 keymap.set('n', '<C-a>', 'gg<S-v>G')                        -- Select all

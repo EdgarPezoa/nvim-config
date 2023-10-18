@@ -11,6 +11,8 @@ null_ls.setup({
     }),
 
     null_ls.builtins.formatting.clang_format,
-    null_ls.builtins.diagnostics.clang_check
+    null_ls.builtins.diagnostics.cpplint,
+
+    null_ls.builtins.diagnostics.pylint
   },
 })
