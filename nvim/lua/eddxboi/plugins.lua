@@ -66,5 +66,6 @@ packer.startup(function(use)
     use 'onsails/lspkind-nvim' -- (REQUIRED) vscode-like pictograms
     use 'mattn/emmet-vim' -- (REQUIRED) auto completion tag emmet
     use "sindrets/diffview.nvim" -- (REQUIRED) git diff views
-
+    use 'karb94/neoscroll.nvim' -- (REQUIRED) smooth scrolling
+    use "lukas-reineke/indent-blankline.nvim" -- (REQUIRED) indent lines styles
 end)

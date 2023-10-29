@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\emmet-vim",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -153,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\edgar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
