@@ -1,9 +1,10 @@
 local status, ibl = pcall(require, "ibl")
-if (not status) then return end
+if not status then
+    return
+end
 
 vim.opt.list = true
-vim.opt.listchars:append("space:·")
-vim.opt.listchars:append("eol:¶")
+vim.opt.listchars = { eol = "¶", space = "·", tab = ">." }
 
 local highlight = {
     "CodingMindsRed",
@@ -11,7 +12,7 @@ local highlight = {
     "CodingMindsYellow",
 }
 
-local hooks = require "ibl.hooks"
+local hooks = require("ibl.hooks")
 
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     vim.api.nvim_set_hl(0, "CodingMindsRed", { fg = "#F3747B" })
@@ -19,7 +20,6 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     vim.api.nvim_set_hl(0, "CodingMindsYellow", { fg = "#F5CE81" })
 end)
 
-ibl.setup {
-    indent = { highlight = highlight }
-}
-
+ibl.setup({
+    indent = { highlight = highlight },
+})
