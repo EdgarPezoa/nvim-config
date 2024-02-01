@@ -1,6 +1,7 @@
 require('eddxboi.base')
 require('eddxboi.plugins')
 require('eddxboi.maps')
+require('eddxboi.commands')
 
 local has = vim.fn.has
 local is_mac = has "macunix"

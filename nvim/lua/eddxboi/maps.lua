@@ -51,6 +51,10 @@ keymap.set("n", "sw", "<C-w>5+")
 keymap.set("n", "sx", "<C-w>5-")
 keymap.set("n", "se", "<C-w>=")
 
+-- Replace in file
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace the hightlight key in whole file
+keymap.set("v", "<leader>s", ":s/") -- Replace the key in whole visual hightlight
+
 -- Plugins
 vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>") -- Opens Git diff view
 vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- Opens Git diff view
@@ -64,4 +68,3 @@ keymap.set("n", "<C-n>", ":tabedit<CR>") -- New tab
 keymap.set("x", "<leader>p", [["_dP]]) -- Replace hightlight text without save in clipboard
 keymap.set("n", "<leader>yp", "{vy}") -- yank paragraph in normal mode
 keymap.set("n", "Q", "<nop>") -- Replace to nothing remake all recordings
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace all hightlight key
