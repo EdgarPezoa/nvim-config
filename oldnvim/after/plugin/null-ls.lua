@@ -5,7 +5,7 @@ end
 
 null_ls.setup({
 	sources = {
-        null_ls.builtins.formatting.eslint_d,
+		null_ls.builtins.formatting.eslint_d,
 		null_ls.builtins.formatting.prettierd.with({
 			condition = function(utils)
 				return utils.has_file({ ".prettierrc" })
@@ -18,7 +18,7 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.pylint,
 	},
 	on_attach = function()
-		vim.api.nvim_create_autocmd("BufWritePost", {
+		vim.api.nvim_create_autocmd("BufWritePre", {
 			callback = function()
 				vim.lsp.buf.format()
 			end,

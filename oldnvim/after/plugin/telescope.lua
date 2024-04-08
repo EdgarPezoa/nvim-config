@@ -44,7 +44,6 @@ vim.keymap.set("n", "<leader>ff", function()
 end)
 
 vim.keymap.set("n", "<leader>fd", function()
-	print("funcs?")
 	telescope.extensions.file_browser.file_browser({
 		path = "%:p:h",
 		respect_gitignore = false,
