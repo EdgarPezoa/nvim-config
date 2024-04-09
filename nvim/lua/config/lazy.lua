@@ -9,14 +9,27 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
+    -- Languages
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
+
+    -- Other important plugins
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.test.core" },
     { import = "lazyvim.plugins.extras.ui.alpha" },
-    -- import/override with your plugins
+    { import = "lazyvim.plugins.extras.util.dot" },
+    { import = "lazyvim.plugins.extras.coding.yanky" },
+    { import = "lazyvim.plugins.extras.coding.codeium" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.editor.aerial" },
+    { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    { import = "lazyvim.plugins.extras.editor.trouble-v3" },
+    { import = "lazyvim.plugins.extras.lsp.none-ls" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+
     { import = "plugins" },
   },
   defaults = {
