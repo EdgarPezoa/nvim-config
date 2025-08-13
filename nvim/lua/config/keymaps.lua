@@ -2,67 +2,75 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local keymap = vim.keymap
+local set = vim.keymap.set
+local del = vim.keymap.del
+
+--Deleted keymaps
+del("n", "<C-h>")
+del("n", "<C-j>")
+del("n", "<C-k>")
+del("n", "<C-l>")
 
 -- Create line spaces
-keymap.set("n", "<leader>o", "o<esc>")
-keymap.set("n", "<leader>O", "O<esc>")
+set("n", "<leader>o", "o<esc>")
+set("n", "<leader>O", "O<esc>")
 
--- Move code
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Move code line
+set("v", "J", ":m '>+1<CR>gv=gv")
+set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Move half page and set cursor in middle
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
+set("n", "<C-d>", "<C-d>zz")
+set("n", "<C-u>", "<C-u>zz")
 
 -- Search and put cursor on mid
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "Nzzzv")
+set("n", "n", "nzzzv")
+set("n", "N", "Nzzzv")
 
 -- Delete without save
-keymap.set("n", "x", '"_x')
-keymap.set("n", "dd", '"_dd')
+set("n", "x", '"_x')
+set("n", "dd", '"_dd')
+set("v", "d", '"_d')
+set("v", "p", '"_dP')
 
 -- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
+set("n", "+", "<C-a>")
+set("n", "-", "<C-x>")
 
 -- Split window
-keymap.set("n", "ss", ":vsplit<Return><C-w>w")
-keymap.set("n", "sp", ":split<Return><C-w>w")
-keymap.set("n", "sc", ":close<CR>")
+set("n", "ss", ":vsplit<Return><C-w>w")
+set("n", "sp", ":split<Return><C-w>w")
+set("n", "sc", ":close<CR>")
 
 -- Move Splited window
-keymap.set("", "sr", "<C-w>r")
-keymap.set("", "se", "<C-w>x")
-keymap.set("", "sH", "<C-w>H")
-keymap.set("", "sK", "<C-w>K")
-keymap.set("", "sJ", "<C-w>J")
-keymap.set("", "sL", "<C-w>L")
+set("n", "sr", "<C-w>r")
+set("n", "se", "<C-w>x")
+set("n", "sH", "<C-w>H")
+set("n", "sK", "<C-w>K")
+set("n", "sJ", "<C-w>J")
+set("n", "sL", "<C-w>L")
 
--- -- Move window
--- keymap.set("", "sh", "<C-w>h")
--- keymap.set("", "sk", "<C-w>k")
--- keymap.set("", "sj", "<C-w>j")
--- keymap.set("", "sl", "<C-w>l")
+-- Move window
+set("n", "sh", "<C-w>h")
+set("n", "sk", "<C-w>k")
+set("n", "sj", "<C-w>j")
+set("n", "sl", "<C-w>l")
 
 -- Resize window
-keymap.set("n", "sa", "<C-w>5<")
-keymap.set("n", "sd", "<C-w>5>")
-keymap.set("n", "sw", "<C-w>5+")
-keymap.set("n", "sx", "<C-w>5-")
-keymap.set("n", "se", "<C-w>=")
+set("n", "sa", "<C-w>5<")
+set("n", "sd", "<C-w>5>")
+set("n", "sw", "<C-w>5+")
+set("n", "sx", "<C-w>5-")
+set("n", "se", "<C-w>=")
 
 -- Replace in file
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace the hightlight key in whole file
-keymap.set("v", "<leader>s", ":s/") -- Replace the key in whole visual hightlight
+set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace the hightlight key in whole file
+set("v", "<leader>s", ":s/") -- Replace the key in whole visual hightlight
 
-keymap.set("i", "jk", "<Esc>") -- Exit insert mode with jk
-keymap.set("v", "f", "<Esc>") -- Exit visual mode with jk
-keymap.set("n", "dp", "dd") -- Delete with save
-keymap.set("n", "dw", 'vb"_d') -- Delete a word backwards
-keymap.set("n", "<C-a>", "gg<S-v>G") -- Select all
-keymap.set("n", "<C-n>", ":tabedit<CR>") -- New tab
-keymap.set("x", "<leader>p", [["_dP]]) -- Replace hightlight text without save in clipboard
-keymap.set("n", "Q", "<nop>") -- Replace to nothing remake all recordings
+set("i", "jk", "<Esc>") -- Exit insert mode with jk
+set("v", "f", "<Esc>") -- Exit visual mode with jk
+set("n", "dp", "dd") -- Delete with save
+set("n", "dw", 'vb"_d') -- Delete a word backwards
+set("n", "<C-a>", "gg<S-v>G") -- Select all
+set("n", "<C-n>", ":tabedit<CR>") -- New tab
+set("n", "Q", "<nop>") -- Replace to nothing remake all recordings
