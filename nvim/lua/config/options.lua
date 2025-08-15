@@ -2,6 +2,7 @@
 local opt = vim.opt
 
 vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_mini_snippets_in_completion = true
 
 opt.list = true
 opt.listchars = { eol = "¶", space = "·", tab = ">." }

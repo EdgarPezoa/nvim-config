@@ -1,0 +1,17 @@
+{
+  "React Use Styles": {
+    "prefix": "rus",
+    "body": [
+      "import { ViewStyle, TextStyle } from \"react-native\";",
+      "",
+      "const use${1:Component}Style = () => {",
+      "    const container: ViewStyle = {};",
+      "    const text: TextStyle = {};",
+      "",
+      "    return { container, text };",
+      "};",
+      "",
+      "export default use${1:Component}Style"
+    ]
+  }
+}

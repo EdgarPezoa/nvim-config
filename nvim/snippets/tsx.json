@@ -1,0 +1,21 @@
+{
+  "ReactNative Functional Component": {
+    "prefix": "rnfc",
+    "body": [
+      "import React from \"react\";",
+      "import { View, Text } from \"react-native\";",
+      "",
+      "type ${1:Component}Props = {};",
+      "",
+      "const ${1:Component} = ({}: ${1:Component}Props) => {",
+      "    return (",
+      "        <View>",
+      "            <Text>${1:Component}</Text>",
+      "        </View>",
+      "    );",
+      "};",
+      "",
+      "export default ${1:Component};"
+    ]
+  }
+}
